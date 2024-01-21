@@ -112,6 +112,8 @@ function renderUser(){
     }else{
         document.getElementById("links").innerHTML="Twitter : Not available";
     }
+
+    document.title=user.name + ":Github"
 }
 
 function handlePageChange(event) {
