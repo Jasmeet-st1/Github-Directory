@@ -95,7 +95,7 @@ function fetchUser(userName){
     return fetch(`https://api.github.com/users/${userName}`)
     .then(response => {
         if (!response.ok) {
-            handleUserNotFound(0);
+            handleUserNotFound(1);
         }
         return response.json();
     })
@@ -113,15 +113,22 @@ function fetchRepos(userName){
     fetch(`https://api.github.com/users/${userName}/repos?page=${page}&per_page=${repo_per_page}`)
     .then(response => {
         if (!response.ok) {
-            handleUserNotFound(0);
+            handleUserNotFound(1);
         }
         return response.json();
     })
     .then(result => {
         
         repos=result;
-        renderRepos();
-        renderPageList();
+
+        if(repos.length<1){
+            document.querySelector("#repo-list").innerHTML=
+            `<h1 class="h1 text-center my-3">No Repos found</h1>`
+        }else{
+            renderRepos();
+            renderPageList();
+        }
+
         console.log(repos);
     })
     .catch(error => {
