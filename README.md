@@ -1,5 +1,5 @@
 
-# Github Repository
+# Github Directory
 
 A simple web application for fetching and displaying GitHub user information.
 
