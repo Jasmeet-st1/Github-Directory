@@ -84,6 +84,7 @@ function fetchRepos(userName){
 
 function changePerPage(per_page){
     repo_per_page=per_page;
+    if(page > Math.ceil(user.public_repos/repo_per_page)) page=Math.ceil(user.public_repos/repo_per_page)
     fetchRepos(username);
 }
 
