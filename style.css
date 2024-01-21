@@ -10,6 +10,21 @@ img#image{
     /* aspect-ratio: 1/1; */
 }
 
+#loading{
+    /* display:none; */
+    width:98vw;
+    height: 100vh;
+}
+
+#data-body{
+    display: none;
+}
+
+.spinner-border{
+    width: 5rem;
+    height: 5rem;
+}
+
 form.input-group{
     width: 70%;
 }
