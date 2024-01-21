@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(234, 234, 234);
+}
+
+img#image{
+    /* width: 200px; */
+    /* height: 200px; */
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio: 1/1; */
+}
+
+form.input-group{
+    width: 70%;
+}
+
+@media all and (max-width:576px) {
+    form.input-group{
+        width: 100%;
+    }
+}
+@media all and (min-width:768px) {
+    form.input-group{
+        width: 66%;
+    }
+}
+@media all and (min-width:1400px) {
+    form.input-group{
+        width: 50%;
+    }
+}
+
+.selected-page{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.selected-page:hover{
+    background-color:#0d6efd ;
+    color: #fff;
+}

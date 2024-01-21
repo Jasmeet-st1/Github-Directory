@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Directory</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body style="background-color: beige; height: 100vh;">
+    <div class="container pt-5 pt-lg-5 bg-white h-100">
+        <h1 class="h1 text-center my-5">Welcome to Github User Information System</h1>
+        <h2 class="h2 text-center my-2">Enter your Github Username</h2>
+
+        <div class="mx-auto my-5 input-group input-group-lg" style="width: fit-content;">
+
+            <input type="text" class="form-control d-inline" id="username" placeholder="Enter Your username">
+
+            <button class="btn btn-primary" id="search-btn" onclick="search()">Search</button>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if there is a message in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+
+        if (message) {
+            // Display the message to the user (you can use a modal, alert, or other UI)
+            alert(message);
+        }
+    });
+
+    document.querySelector("#search-btn").addEventListener('click', () => {
+        let username=document.querySelector("#username").value;
+        const data = { user: username };
+
+        // Convert data to a URL parameter string
+        const params = new URLSearchParams(data).toString();
+
+        // Redirect to Page 2 with parameters
+        window.location.href = `userInfo.html?${params}`;
+
+    })
+
+    
+
+</script>
+
+</html>
