@@ -49,13 +49,8 @@ function fetchUser(userName){
         user=result;
         renderUser();
         console.log(user);
-        setTimeout(()=>{
-            loading.setAttribute('style','display: none !important')
-            data_body.setAttribute('style','display: block');
-
-        },2000);
-        // loading.setAttribute('style','display: none !important')
-        // data_body.setAttribute('style','display: block');
+        loading.setAttribute('style','display: none !important')
+        data_body.setAttribute('style','display: block');
     })
     .catch(error => {
         handleUserNotFound(1);
