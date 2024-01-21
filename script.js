@@ -9,64 +9,6 @@ let repo_per_page=10;
 
 window.onload= ()=>{
 
-    // Make a request to the GitHub API
-    // fetch(`https://api.github.com/users/${username}`)
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error(`GitHub API error: ${response.statusText}`);
-    //     }
-    //     return response.json();
-    // })
-    // .then(result => {
-        
-    //     user=result;
-    //     return fetch(`https://api.github.com/users/${username}/repos`)
-        
-    //     console.log(user);
-    // })
-    // // .then(result=> result.json())
-    // .then(result=>{
-    //     repos=result;
-        
-    //     document.getElementById("image").src=user.avatar_url;
-    //     document.getElementById("name").innerHTML=user.name;
-    //     document.getElementById("github-link").href=user.html_url
-    //     document.getElementById("github-link").innerHTML=user.html_url
-        
-    //     if(user.bio){
-    //         document.getElementById("bio").innerHTML=`Bio : ${user.bio}`;
-    //     }else{
-    //         document.getElementById("bio").innerHTML="Bio not available";
-    //     }
-        
-    //     if(user.location){
-    //         document.getElementById("location").innerHTML=`Bio : ${user.location}`;
-    //     }else{
-    //         document.getElementById("location").innerHTML="Location not available";
-    //     }
-        
-    //     if(user.twitter_username){
-    //         document.getElementById("twitter").innerHTML=`https://twitter.com/${user.twitter_username}`;
-    //         document.getElementById("twitter").href=`https://twitter.com/${user.twitter_username}`;
-    //     }
-        
-        
-    //     if(repos.length<1){
-    //         document.querySelector("#repo-list").innerHTML=
-    //         `<h1 class="h1 text-center my-3">No Repos found</h1>`
-    //     }else{
-            
-    //         renderPage();
-    //         renderPageList();
-    //     }
-        
-    // })
-    // .catch(error => {
-    //     console.error('Error fetching user information:', error);
-    //     // const userInfoContainer = document.getElementById('user-info');
-    //     // userInfoContainer.innerHTML = '<p>Error fetching user information</p>';
-    // });
-
     fetchUser(username)
     .then(()=>{
         fetchRepos(username);
@@ -92,6 +34,10 @@ function handleUserNotFound(condition) {
 
 function fetchUser(userName){
     
+    const loading = document.getElementById('loading');
+    const data_body = document.getElementById('data-body');
+
+    
     return fetch(`https://api.github.com/users/${userName}`)
     .then(response => {
         if (!response.ok) {
@@ -103,6 +49,8 @@ function fetchUser(userName){
         user=result;
         renderUser();
         console.log(user);
+        loading.setAttribute('style','display: none !important')
+        data_body.setAttribute('style','display: block');
     })
     .catch(error => {
         handleUserNotFound(1);
@@ -136,16 +84,6 @@ function fetchRepos(userName){
     });
 }
 
-function changePerPage(per_page){
-    repo_per_page=per_page;
-    console.log(repo_per_page);
-    fetchRepos(username);
-}
-
-function changePage(newPage){
-    page=newPage;
-    renderRepos();
-}
 
 function renderUser(){
     document.getElementById("image").src=user.avatar_url;
