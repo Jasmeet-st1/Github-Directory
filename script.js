@@ -101,7 +101,7 @@ function renderUser(){
     }
     
     if(user.location){
-        document.getElementById("location").innerHTML=`Bio : ${user.location}`;
+        document.getElementById("location").innerHTML=`${user.location}`;
     }else{
         document.getElementById("location").innerHTML="Location not available";
     }
