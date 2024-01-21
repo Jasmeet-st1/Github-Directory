@@ -48,7 +48,6 @@ function fetchUser(userName){
     .then(result => {
         user=result;
         renderUser();
-        console.log(user);
         loading.setAttribute('style','display: none !important')
         data_body.setAttribute('style','display: block');
     })
@@ -77,7 +76,6 @@ function fetchRepos(userName){
             renderPageList();
         }
 
-        console.log(repos);
     })
     .catch(error => {
         console.error('Error fetching user information:', error);
@@ -86,7 +84,6 @@ function fetchRepos(userName){
 
 function changePerPage(per_page){
     repo_per_page=per_page;
-    console.log(repo_per_page);
     fetchRepos(username);
 }
 
@@ -143,7 +140,6 @@ function handlePageChange(event) {
 
 function renderPageList(){
     let pages=Math.ceil(user.public_repos/repo_per_page);
-    console.log(pages);
 
     let pageList=[];
 
