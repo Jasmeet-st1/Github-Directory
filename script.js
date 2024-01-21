@@ -181,10 +181,10 @@ function renderRepos(){
                         ${(repo.topics.length!=0) ? 
                             `<div class="topics">
                                 ${repo.topics.map(topic=>{
-                                    return `<span class=" bg-primary text-white p-2 fs-6 rounded" style="width:min-content !important;">${topic}</span>`
+                                    return `<span class="d-inline-block mb-2 bg-primary text-white p-2 fs-6 rounded ">${topic}</span>`
                                 }).join(' ')}
                                 ${(left > 0) ? 
-                                    `<span class="bg-primary text-white p-2 rounded" style="width:min-content !important;">${left}+</span>` : ``
+                                    `<span class="d-inline-block mb-2 bg-primary text-white p-2 rounded">${left}+</span>` : ``
                                 }
                             </div>` : ``
                         }
