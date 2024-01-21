@@ -84,6 +84,12 @@ function fetchRepos(userName){
     });
 }
 
+function changePerPage(per_page){
+    repo_per_page=per_page;
+    console.log(repo_per_page);
+    fetchRepos(username);
+}
+
 
 function renderUser(){
     document.getElementById("image").src=user.avatar_url;
