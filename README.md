@@ -24,5 +24,6 @@ This project is a web application that allows users to enter a GitHub username. 
 4. View User Information:
     - The application will redirect to the userInfo.html page.
     - The userInfo.html page fetches and displays information about the entered GitHub user using the GitHub REST API. It includes user's basic information like name, bio, avatar and its directories with directory name, description, and topics. 
-           The directories are shown in pages with different option in paging (10/page to 100/page).
+
+         The directories are shown in pages with different option in paging (10/page to 100/page).
 
