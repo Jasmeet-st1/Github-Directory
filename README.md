@@ -3,6 +3,8 @@
 
 A simple web application for fetching and displaying GitHub user information.
 
+Project link [https://jasmeet-st1.github.io/Github-Repository/](https://jasmeet-st1.github.io/Github-Repository/)
+
 ## Project Description
 
 This project is a web application that allows users to enter a GitHub username. Upon submitting the username, the application redirects to a userInfo page, where it fetches and displays information about the GitHub user using the GitHub REST API.
