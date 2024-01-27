@@ -3,7 +3,7 @@
 
 A simple web application for fetching and displaying GitHub user information.
 
-Project link [https://jasmeet-st1.github.io/Github-Repository/](https://jasmeet-st1.github.io/Github-Repository/)
+Project link [https://jasmeet-st1.github.io/Github-Directory/](https://jasmeet-st1.github.io/Github-Directory/)
 
 ## Project Description
 
@@ -13,7 +13,7 @@ This project is a web application that allows users to enter a GitHub username. 
 
 1. Clone the Repository
    ```bash
-   git clone https://github.com/Jasmeet-st1/Github-Repository.git
+   git clone https://github.com/Jasmeet-st1/Github-Directory.git
    cd Github-Repository
    ```
 
